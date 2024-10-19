@@ -1,0 +1,13 @@
+[behavior]
+use-uv = true
+global-python = false
+force-rye-managed = true
+autosync = true
+venv-mark-sync-ignore = true
+fetch-with-build-info = false
+
+requires-python = ">= 3.10"
+toolchain = "cpython@3.10"
+build-system = "hatchling"
+license = "MIT"
+dependency-operator = "=="

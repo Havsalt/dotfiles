@@ -9,14 +9,15 @@
 #     # Write-Host (Get-Location) -ForegroundColor Red
 # }
 
+# == (Display startup message)
+Write-Host "-=< " -NoNewLine
+Write-Host "profile.ps1" -NoNewLine -ForegroundColor Red
+Write-Host " >=-"
+
 # == (Load other scripts )==
 # Load custom prompt
 . $PSScriptRoot/prompt.ps1
 # Aliases
 . $PSScriptRoot/aliases.ps1
 # Completions
-Get-ChildItem $PSScriptroot/completions | ForEach-Object {
-    # '$_' represents the current file or directory in the iteration
-    Write-Host "Loading completions from: $($_.Name)"
-    . $_.FullName
-}
+. $PSScriptRoot/load_completions.ps1

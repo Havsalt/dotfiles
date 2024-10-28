@@ -10,9 +10,9 @@
 # }
 
 # == (Display startup message)
-Write-Host "-=< " -NoNewLine
+Write-Host "--< " -NoNewLine
 Write-Host "Profile.ps1" -NoNewLine -ForegroundColor Red
-Write-Host " >=-"
+Write-Host " >--"
 
 # == (Load other scripts )==
 # Load custom prompt

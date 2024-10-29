@@ -10,6 +10,9 @@
 # }
 
 # == (Display startup message)
+# Start with newline
+Write-Host
+# Display profile info
 Write-Host "--< " -NoNewLine
 Write-Host "Profile.ps1" -NoNewLine -ForegroundColor Red
 Write-Host " >--"
@@ -21,3 +24,5 @@ Write-Host " >--"
 . $PSScriptRoot/Aliases.ps1
 # Completions
 . $PSScriptRoot/Load-Completions.ps1
+# End with newline
+Write-Host

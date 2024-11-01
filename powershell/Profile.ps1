@@ -1,17 +1,9 @@
 
-# function Set-Location {
-#     param (
-#         [Parameter(ValueFromRemainingArguments)]$segments # Collect all segments
-#     )
-#     $fullPath = $segments -join ' ' # Join arguments with spaces
-#     # $quotedPath = "`"$fullPath`"" # Wrap path in quotes
-#     & Microsoft.PowerShell.Management\Set-Location $fullPath
-#     # Write-Host (Get-Location) -ForegroundColor Red
-# }
+# == (Display startup message) ==
 
-# == (Display startup message)
 # Start with newline
 Write-Host
+
 # Display profile info
 Write-Host "--< " -NoNewLine
 Write-Host "Profile.ps1" -NoNewLine -ForegroundColor Red
@@ -24,5 +16,6 @@ Write-Host " >--"
 . $PSScriptRoot/Aliases.ps1
 # Completions
 . $PSScriptRoot/Load-Completions.ps1
+
 # End with newline
 Write-Host

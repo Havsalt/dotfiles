@@ -5,6 +5,7 @@ $aliases  = @{
     hr    = 'here'
     cdf   = { "$(fzf)\.." | cd }
     codef = { code (Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path) }
+    fcode = 'codef'
 }
 
 # Display alias count

@@ -1,14 +1,15 @@
 # Key: Literal
 # Value: String | ScriptBlock
-$aliases = @{
-    lvim = 'C:\Users\knuto\.local\bin\lvim.ps1'
-    hr   = 'here'
-    cdf  = { "$(fzf)\.." | cd }
+$aliases  = @{
+    lvim  = 'C:\Users\knuto\.local\bin\lvim.ps1'
+    hr    = 'here'
+    cdf   = { "$(fzf)\.." | cd }
+    codef = { code (Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path) }
 }
 
 # Display alias count
 Write-Host "Loading " -NoNewLine
-Write-Host $aliases.count -NoNewLine -ForegroundColor Blue
+Write-Host $aliases.Count -NoNewLine -ForegroundColor Blue
 Write-Host " aliases" -NoNewLine -ForegroundColor Blue
 Write-Host ": " -NoNewline
 Write-Host "..." -NoNewLine -ForegroundColor Yellow

@@ -1,5 +1,6 @@
-
-$aliases = @{ # Key: Literal, Value: String | ScriptBlock
+# Key: Literal
+# Value: String | ScriptBlock
+$aliases = @{
     lvim = 'C:\Users\knuto\.local\bin\lvim.ps1'
     hr   = 'here'
     cdf  = { "$(fzf)\.." | cd }

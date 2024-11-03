@@ -1,10 +1,2 @@
 
-# function ask {
-#     param (
-#         OptionalParameters
-#     )
-    
-# }
-
-$some = $(here)
-Write-Host $($some)!
+return "Not yet implemented!"

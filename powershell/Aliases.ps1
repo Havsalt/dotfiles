@@ -3,7 +3,7 @@
 $aliases  = @{
     lvim  = 'C:\Users\knuto\.local\bin\lvim.ps1'
     hr    = 'here'
-    cdf   = { "$(fzf)\.." | cd }
+    cdf   = { if ( $filePath = fzf) { cd "$filePath\.." } }
     codef = { code (Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path) }
     fcode = 'codef'
 }

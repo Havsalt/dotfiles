@@ -11,11 +11,11 @@ Write-Host " >--"
 
 # == (Load other scripts )==
 # Load custom prompt
-. $PSScriptRoot/Prompt.ps1
+. $PSScriptRoot/prompt.ps1
 # Aliases
-. $PSScriptRoot/Aliases.ps1
+. $PSScriptRoot/aliases.ps1
 # Completions
-. $PSScriptRoot/Load-Completions.ps1
+. $PSScriptRoot/load-completions.ps1
 
 # End with newline
 Write-Host

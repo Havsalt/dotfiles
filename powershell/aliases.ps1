@@ -8,7 +8,7 @@ $aliases  = @{
     fcode = 'codef'
 }
 
-# Display alias count
+# Display alias count and indicate loading of them
 Write-Host "Loading " -NoNewLine
 Write-Host $aliases.Count -NoNewLine -ForegroundColor Blue
 Write-Host " aliases" -NoNewLine -ForegroundColor Blue

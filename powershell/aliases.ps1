@@ -1,7 +1,7 @@
 # Key: Literal
 # Value: String | ScriptBlock
 $aliases  = @{
-    lvim  = 'C:\Users\knuto\.local\bin\lvim.ps1'
+    lvim  = "$HOME\.local\bin\lvim.ps1"
     hr    = 'here'
     cdf   = { if ( $filePath = fzf ) { cd "$filePath\.." } }
     codef = {

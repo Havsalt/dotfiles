@@ -3,8 +3,11 @@
 $aliases  = @{
     lvim  = 'C:\Users\knuto\.local\bin\lvim.ps1'
     hr    = 'here'
-    cdf   = { if ( $filePath = fzf) { cd "$filePath\.." } }
-    codef = { code (Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path) }
+    cdf   = { if ( $filePath = fzf ) { cd "$filePath\.." } }
+    codef = {
+        $filePath = Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path
+        if ( $filePath.Length -gt 3 ) { code "$filePath\.." }  # Longer than "C:\"
+    }
     fcode = 'codef'
 }
 

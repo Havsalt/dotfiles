@@ -1,8 +1,12 @@
 # Key: Literal
 # Value: String | ScriptBlock
-$aliases  = @{
+$Aliases  = @{
     lvim  = "$HOME\.local\bin\lvim.ps1"
     hr    = 'here'
+    cfmt  = {
+        Write-Host 'Running `cargo fmt`'
+        cargo fmt
+    }
     cdf   = { if ( $filePath = fzf ) { cd "$filePath\.." } }
     codef = {
         $filePath = Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path
@@ -13,16 +17,16 @@ $aliases  = @{
 
 # Display alias count and indicate loading of them
 Write-Host "Loading " -NoNewLine
-Write-Host $aliases.Count -NoNewLine -ForegroundColor Blue
+Write-Host $Aliases.Count -NoNewLine -ForegroundColor Blue
 Write-Host " aliases" -NoNewLine -ForegroundColor Blue
 Write-Host ": " -NoNewline
 Write-Host "..." -NoNewLine -ForegroundColor Yellow
 # Load each alias
-foreach ($alias in $aliases.Keys) {
-    if ($aliases[$alias] -is [string]) {
-        Set-Alias -Name $alias -Value $aliases[$alias]
-    } else { # `$aliases[$alias]` is `[scriptblock]`
-        New-Item -Path "Function:$alias" -Value $aliases[$alias] -ItemType Function -Force | Out-Null
+foreach ($alias in $Aliases.Keys) {
+    if ($Aliases[$alias] -is [string]) {
+        Set-Alias -Name $alias -Value $Aliases[$alias]
+    } else { # `$Aliases[$alias]` is `[scriptblock]`
+        New-Item -Path "Function:$alias" -Value $Aliases[$alias] -ItemType Function -Force | Out-Null
     }
 }
 # Update loading status to "Done"

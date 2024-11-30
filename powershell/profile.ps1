@@ -10,12 +10,14 @@ Write-Host "Profile.ps1" -NoNewLine -ForegroundColor Red
 Write-Host " >--"
 
 # == (Load other scripts )==
+# Load environment variables
+. "$PSScriptRoot/env-vars.ps1"
 # Load custom prompt
-. $PSScriptRoot/prompt.ps1
+. "$PSScriptRoot/prompt.ps1"
 # Aliases
-. $PSScriptRoot/aliases.ps1
+. "$PSScriptRoot/aliases.ps1"
 # Completions
-. $PSScriptRoot/load-completions.ps1
+. "$PSScriptRoot/load-completions.ps1"
 
 # End with newline
 Write-Host

@@ -1,6 +1,7 @@
 # Key: Literal
 # Value: String | ScriptBlock
 $Aliases  = @{
+    ls    = 'eza'  # Override default ls
     lvim  = "$HOME\.local\bin\lvim.ps1"
     hr    = 'here'
     cfmt  = {
@@ -13,6 +14,14 @@ $Aliases  = @{
         if ( $filePath.Length -gt 3 ) { code "$filePath\.." }  # Longer than "C:\"
     }
     fcode = 'codef'
+    ww    = {
+        Write-Host 'Running: `rye run main`'
+        rye run main
+    }
+    dd    = {
+        Write-Host 'Running: `rye fmt`'
+        rye fmt
+    }
 }
 
 # Display alias count and indicate loading of them

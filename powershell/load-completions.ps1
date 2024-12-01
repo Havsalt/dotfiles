@@ -4,7 +4,7 @@ $paths = Get-ChildItem "$PSScriptroot/completions"
 Write-Host "Loading " -NoNewLine
 Write-Host $paths.Count -NoNewLine -ForegroundColor Blue
 Write-Host " completions" -NoNewLine -ForegroundColor Blue
-Write-Host ":" -NoNewLine
+Write-Host ": " -NoNewLine
 Write-Host "..." -NoNewLine -ForegroundColor Yellow
 # Load completions
 $paths | ForEach-Object {
@@ -14,4 +14,4 @@ $paths | ForEach-Object {
     . $_.FullName
 }
 # Update loading status to "Done"
-Write-Host "`e[3D Done" -ForegroundColor Green
+Write-Host "`e[4D Done" -ForegroundColor Green

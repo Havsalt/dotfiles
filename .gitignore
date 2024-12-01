@@ -1,2 +1,7 @@
 script-symlinks/
+.rye/py/
+.rye/self/
 .rye/shims/
+.rye/tools/
+.rye/uv/
+.rye/credentials

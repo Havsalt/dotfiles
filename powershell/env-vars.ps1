@@ -3,7 +3,7 @@
 $RootRelativeEnvironmentPaths = @{  # Relative to ".dotfiles" project folder
     XDG_CONFIG_HOME = ".config"
     CARGO_HOME = ".cargo"
-    RYE_HOME = ".rye"
+    RYE_HOME = ".rye"  # NOTE: This one has to be exported from env vars menu
 }
 $EnvironmentVariables = @{
     RUST_BACKTRACE = 1

@@ -1,4 +1,6 @@
 script-symlinks/
+.cargo/
+.rustup/
 .rye/py/
 .rye/self/
 .rye/shims/

@@ -7,6 +7,8 @@ $FolderNamesToHighlight = @(
     "Mixed"
 )
 
+$Username = "Knutern"
+
 # Custom prompt text
 function Prompt {
     $location = (Get-Location).Path
@@ -15,7 +17,7 @@ function Prompt {
     $middleSegments = $splitLocation[1..($splitLocation.Length - 2)]
     $lastSegment = $splitLocation[-1]
     # Write to screen
-    Write-Host "Knutern" -NoNewLine -ForegroundColor Yellow
+    Write-Host $Username -NoNewLine -ForegroundColor Yellow
     Write-Host " @ " -NoNewLine -ForegroundColor Magenta
     Write-Host "$drive] " -NoNewLine -ForegroundColor Green
     # Write segments, and color if special
@@ -34,6 +36,6 @@ function Prompt {
     }
         # Write last segment (`$lastSegment` may be empty string)
         Write-Host $lastSegment -NoNewLine -ForegroundColor Red
-        Write-Host ">" -NoNewLine -ForegroundColor Cyan
+        Write-Host ">" -NoNewLine -ForegroundColor White
         return " "
     }

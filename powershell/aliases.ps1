@@ -4,6 +4,7 @@ $Aliases  = @{
     ls    = 'eza'  # Override default ls
     lvim  = "$HOME\.local\bin\lvim.ps1"
     hr    = 'here'
+    grep  = 'rg'
     cfmt  = {
         Write-Host 'Running `cargo fmt`'
         cargo fmt
@@ -14,6 +15,10 @@ $Aliases  = @{
         if ( $filePath.Length -gt 3 ) { code "$filePath\.." }  # Longer than "C:\"
     }
     fcode = 'codef'
+    rr    = {
+        Clear-Host         # Clear screen
+        Invoke-History -2  # Re-run command
+    }
     ww    = {
         Write-Host 'Running: `rye run main`'
         rye run main

@@ -4,6 +4,8 @@ $Aliases  = @{
     ls    = 'eza'  # Override default ls
     hr    = 'here'
     grep  = 'rg'
+    gs    = { git.exe status }
+    deep  = { eza.exe -DTL 2 }
     cdf   = { if ( $filePath = fzf ) { cd "$filePath\.." } }
     codef = {
         $filePath = Resolve-Path "$(fzf)\.." | Select-Object -ExpandProperty Path
@@ -28,13 +30,9 @@ $Aliases  = @{
     }
 }
 
-function deep {
-    eza.exe -DTL 2  # Help: Read flags as "Directory Tree Levels = 2"
-}
-
 # Display alias count and indicate loading of them
 Write-Host "Loading " -NoNewLine
-Write-Host ($Aliases.Count + 1) -NoNewLine -ForegroundColor Blue  # NOTE: Static +1, because of function `deep`
+Write-Host $Aliases.Count -NoNewLine -ForegroundColor Blue
 Write-Host " aliases" -NoNewLine -ForegroundColor Blue
 Write-Host ": " -NoNewline
 Write-Host "..." -NoNewLine -ForegroundColor Yellow

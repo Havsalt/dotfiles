@@ -6,6 +6,7 @@ $RootRelativeEnvironmentPaths = @{  # Relative to ".dotfiles" project folder
     CARGO_HOME = ".cargo"
     RUSTUP_HOME = ".rustup"
     RYE_HOME = ".rye"
+    VIMINIT = ".vimrc"
 }
 $EnvironmentVariables = @{
     RUST_BACKTRACE = 1

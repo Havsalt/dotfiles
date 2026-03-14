@@ -1,9 +1,10 @@
 # Key: Literal
 # Value: String | ScriptBlock
 $Aliases  = @{
-    ls    = 'eza'  # Override default ls
-    hr    = 'here'
-    grep  = 'rg'
+    ls    = "eza"  # Override default ls
+    hr    = "here"
+    grep  = "rg"
+    mdoc  = "pydoc-markdown"
     gs    = { git.exe status }
     deep  = { eza.exe -DTL 2 }
     cdf   = { if ( $filePath = fzf ) { cd "$filePath\.." } }
@@ -21,12 +22,16 @@ $Aliases  = @{
         Invoke-History -2  # Re-run command
     }
     ww    = {
-        Write-Host 'Running: `rye run main`'
-        rye run main
+        Write-Host 'Running: `uv run main.py`'
+        uv run main.py
     }
     dd    = {
-        Write-Host 'Running: `rye fmt`'
-        rye fmt
+        Write-Host 'Running: `ruff format`'
+        ruff format
+    }
+    aa    = {
+        Write-Host 'Running: `pytest`'
+        pytest
     }
 }
 

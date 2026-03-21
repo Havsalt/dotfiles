@@ -39,8 +39,7 @@ $env.PROMPT_COMMAND = {
 $env.PROMPT_COMMAND_RIGHT = {
     let count = gstat | get ahead
     match $count {
-        -1 => {},
-        0 => { '::: Up to date :::' },
+        -1 | 0 => {},
         $x => $"(ansi magenta)::: Ahead by ($x) commit(if $x == 1 { '' } else { 's' }) :::"
     }
 }

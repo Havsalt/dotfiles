@@ -3,6 +3,7 @@
 let SUBCOMMANDS = [
     info
     edit
+    list
 ]
 
 def main [

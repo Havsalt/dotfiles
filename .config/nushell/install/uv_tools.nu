@@ -1,5 +1,5 @@
 
-let packages = [
+const PACKAGES = [
     # Tools
     ruff
     maturin
@@ -16,9 +16,9 @@ let packages = [
 def main [
     --upgrade (-u)  # Attempt to upgrade all packages
 ] {
-    let count = $packages | length
+    let count = $PACKAGES | length
     print $"[*] Ensuring ($count) uv tool(if $count > 1 { 's are' } else { ' is' }) installed:"
-    $packages | each {|pkg|
+    $PACKAGES | each {|pkg|
         let cmd = $"uv tool install ($pkg) (if $upgrade { '--upgrade' } else { '' })"
         print $"> ($cmd)"
         nu -c $cmd

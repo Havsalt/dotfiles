@@ -41,5 +41,6 @@ $env.PROMPT_COMMAND_RIGHT = {
     match $count {
         -1 | 0 => {},
         $x => $"(ansi magenta)::: Ahead by ($x) commit(if $x == 1 { '' } else { 's' }) :::"
+        $x => $"(ansi magenta)::: (gstat | get branch) ($x) commit(if $x == 1 { '' } else { 's' }) :::"
     }
 }

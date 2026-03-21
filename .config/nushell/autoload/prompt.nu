@@ -35,3 +35,12 @@ $env.PROMPT_COMMAND = {
 
     $"(ansi yellow)($USERNAME) (ansi green)($drive)] ($colored_middle)(ansi red)($last)"
 }
+
+$env.PROMPT_COMMAND_RIGHT = {
+    let count = gstat | get ahead
+    match $count {
+        -1 => {},
+        0 => { '::: Up to date :::' },
+        $x => $"(ansi magenta)::: Ahead by ($x) commit(if $x == 1 { '' } else { 's' }) :::"
+    }
+}

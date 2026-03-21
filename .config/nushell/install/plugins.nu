@@ -1,15 +1,34 @@
 
 # Nushell pliugin names (just the name, *not* "nu_plugin_" prefix)
 const PLUGIN_NAMES = [
-    tree
+    vec
+    units
     gstat
+    tree
+    clipboard
+    emoji
+    highlight
+    image
+    inc
+    semver
+    audio
+    audio_hook
+    bson
+    file
+    formats
+    plot
+    plotters
+    term_plot
+    pnet
+    ws
+    terminal_qr
 ]
 
 def main [
     --upgrade (-u)  # Attempt to upgrade all packages
 ] {
     # Apply final string transformations
-    let locked_packages = PLUGIN_NAMES
+    let locked_packages = $PLUGIN_NAMES
     | each { |name| $"nu_plugin_($name)" }
     | each { |package| $"($package) --locked" }
     

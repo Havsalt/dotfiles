@@ -8,28 +8,31 @@ const PLUGIN_NAMES = [
     clipboard
     emoji
     highlight
-    image
     inc
     semver
     audio
     audio_hook
-    bson
     file
     formats
     plot
     plotters
-    term_plot
-    pnet
     ws
     terminal_qr
+]
+const GITHUB = 'https://github.com'
+const PLUGIN_GIT_REPOS = [
+    FMotalleb/nu_plugin_image
+    Kissaki/nu_plugin_bson
 ]
 
 def main [
     --upgrade (-u)  # Attempt to upgrade all packages
 ] {
     # Apply final string transformations
-    let locked_packages = $PLUGIN_NAMES
-    | each { |name| $"nu_plugin_($name)" }
+    let locked_packages = [
+        ...($PLUGIN_NAMES | each { |name| $"nu_plugin_($name)" })
+        ...($PLUGIN_GIT_REPOS | each { |repo| $"--git ($GITHUB)/($repo)" })
+    ]
     | each { |package| $"($package) --locked" }
     
     let count = $locked_packages | length

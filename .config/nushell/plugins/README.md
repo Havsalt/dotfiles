@@ -1,1 +1,0 @@
-# Plugin Directory for `Nushell`

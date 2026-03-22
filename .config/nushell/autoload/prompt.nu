@@ -39,7 +39,8 @@ $env.PROMPT_COMMAND = {
 $env.PROMPT_COMMAND_RIGHT = {
     let count = gstat | get ahead
     match $count {
-        -1 | 0 => {},
-        $x => $"(ansi magenta)::: (gstat | get branch): +($x) commit(if $x == 1 { '' } else { 's' }) :::"
+        -1 | 0 => return
+        1 => $"(ansi magenta)::: (gstat | get branch): +1 commit :::"
+        $x => $"(ansi magenta)::: (gstat | get branch): +($x) commits :::"
     }
 }

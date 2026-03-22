@@ -4,6 +4,7 @@ let TOOLS = [
     'zoxide --version 0.9.9'  # Works with Nushell v0.111.0
     bat
     ripgrep
+    mdcat
     havsalt-here
 ]
 

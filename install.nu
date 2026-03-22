@@ -18,7 +18,7 @@ def main [] {
     | each { |stem| $install_folder | path join $"($stem).nu" }
     | each { |filepath|
         print $"> ($filepath)"
-        # nu $filepath
+        nu $filepath
     }
     # Dynamically run each `main` *remaining* function,
     # for each file in the install folder
@@ -28,7 +28,7 @@ def main [] {
     | get name
     | each { |filepath|
         print $"> ($filepath)"
-        # nu $filepath
+        nu $filepath
     }
     return $"`-> Ran ($count) install scripts"
 }

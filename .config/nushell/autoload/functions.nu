@@ -11,7 +11,7 @@ def 'fmt rust' [] {
     nu -c $cmd
 }
 
-def 'fmt' [] {
+def fmt [] {
     mut $times_formatted = 0
     if ('pyproject.toml' | path exists) {
         job spawn { fmt python }

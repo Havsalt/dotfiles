@@ -25,3 +25,15 @@ def fmt [] {
         error make 'fmt: No proper formatter found'
     }
 }
+
+# Checkout a branch using `fzf` to select from git branches.
+def 'git select' [] {
+    ^git branch
+    | lines
+    | str trim --char '*'
+    | str trim
+    | to text
+    | ^fzf
+    | ^git checkout $in
+}
+alias oo = git select

@@ -1,16 +1,19 @@
 
+# Format python project.
 def 'fmt python' [] {
     let cmd = [uv run ruff format] | str join ' '
     print $"fmt: ($cmd)"
     nu -c $cmd
 }
 
+# Format rust project.
 def 'fmt rust' [] {
     let cmd = [cargo fmt] | str join ' '
     print $"fmt: ($cmd)"
     nu -c $cmd
 }
 
+# Automatically format a project using the proper formatter(s).
 def fmt [] {
     mut $times_formatted = 0
     if ('pyproject.toml' | path exists) {

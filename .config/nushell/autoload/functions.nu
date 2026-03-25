@@ -36,7 +36,7 @@ def 'git select' [] {
     | str trim --char '*'
     | str trim
     | to text
-    | ^fzf
+    | ^fzf --header='::: Select git branch to checkout :::'
     | ^git checkout $in
 }
 alias oo = git select
